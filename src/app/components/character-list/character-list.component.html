@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <h1 class="text-center">Personajes de la Guerra de las Galaxias</h1>
+
+  <div class="card border-white mt-5">
+    <div class="card-header bg-dark text-center"><h3>Personajes</h3></div>
+    <div class="card-body bg-secondary">
+      <ul class="list-group">
+        <li
+          class="
+            list-group-item list-group-item-action
+            clickable
+            animate__animated animate__bounce animate__fadeIn
+          "
+          *ngFor="let character of characters"
+          (click)="displayCharacter(character.url)"
+        >
+          {{ character.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer bg-dark border-white row">
+      <div class="col-6">
+        <button
+          class="btn btn-warning"
+          *ngIf="previousPage"
+          (click)="getCharacterList(previousPage)"
+        >
+          Anterior
+        </button>
+      </div>
+      <div class="col-6 text-end">
+        <button
+          class="btn btn-warning"
+          *ngIf="nextPage"
+          (click)="getCharacterList(nextPage)"
+        >
+          Siguiente
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

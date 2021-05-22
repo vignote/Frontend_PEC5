@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h1 class="text-center">Datos del Personaje</h1>
+
+  <div class="card border-white mt-5" *ngIf="character">
+    <div class="card-header bg-dark text-center">
+      <h3>{{ character.name }}</h3>
+    </div>
+    <div class="card-body bg-secondary">
+      <p><strong>Altura:</strong> {{ character.height }}</p>
+      <p><strong>Peso:</strong> {{ character.mass }}</p>
+      <p><strong>Color Pelo:</strong> {{ character.hair_color }}</p>
+      <p><strong>Color de Ojos:</strong> {{ character.eye_color }}</p>
+      <p><strong>Año de Nacimiento:</strong> {{ character.birth_year }}</p>
+    </div>
+    <div class="card-footer bg-dark border-white">
+      <button class="btn btn-warning" routerLink="/">Volver</button>
+    </div>
+  </div>
+</div>
