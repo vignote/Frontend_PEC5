@@ -12,6 +12,7 @@ export class CharacterService {
 
   getCharacterList(inputUrl?: string) {
     const url = inputUrl ? inputUrl + '/' : this.DEFAULT_URL;
+    console.log(url);
     return this.http.get<CharacterList>(url);
   }
 
