@@ -16,6 +16,8 @@ export class CharacterService {
   }
 
   getCharacter(id: string) {
-    return this.http.get<Character>(this.DEFAULT_URL + id);
+    const url = this.DEFAULT_URL + id + '/';
+    console.log(url);
+    return this.http.get<Character>(url);
   }
 }
