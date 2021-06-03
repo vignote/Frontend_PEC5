@@ -11,7 +11,7 @@ export class CharacterService {
   constructor(public http: HttpClient) {}
 
   getCharacterList(inputUrl?: string) {
-    const url = inputUrl ? inputUrl : this.DEFAULT_URL;
+    const url = inputUrl ? inputUrl + '/' : this.DEFAULT_URL;
     return this.http.get<CharacterList>(url);
   }
 
