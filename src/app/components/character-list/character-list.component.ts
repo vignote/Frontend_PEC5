@@ -39,11 +39,13 @@ export class CharacterListComponent implements OnInit, OnDestroy {
       .pipe(take(1))
       .subscribe((characterList) => {
         this.characters = characterList.results;
-        this.previousPage = characterList.previous.replace(
-          'http://',
-          'https://'
-        );
-        this.nextPage = characterList.next.replace('http://', 'https://');
+
+        this.previousPage = characterList.previous
+          ? characterList.previous.replace('http://', 'https://')
+          : null;
+        this.nextPage = characterList.next
+          ? characterList.next.replace('http://', 'https://')
+          : null;
       });
   }
 
